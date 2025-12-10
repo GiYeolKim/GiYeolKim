@@ -1,21 +1,10 @@
 <div class="reviewer-experiences">
   <h2>Reviewer Experiences</h2>
   {% if site.data.reviewer_experiences %}
-    <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-        {% for experience in site.data.reviewer_experiences %}
-          <tr>
-            <td>
-              {{ experience.conference }}
-              {% if experience.years %}
-                <span class="font-weight-light">
-                  ({{ experience. years | join: ', ' }})
-                </span>
-              {% endif %}
-            </td>
-          </tr>
-        {% endfor %}
-      </table>
+    <div style="font-size: 1rem;">
+      {% for experience in site.data.reviewer_experiences %}
+        {{ experience.conference }} ({{ experience.year }}){% unless forloop.last %}, {% endunless %}
+      {% endfor %}
     </div>
   {% endif %}
 </div>
