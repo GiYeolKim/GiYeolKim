@@ -5,8 +5,14 @@
       <table class="table table-sm table-borderless">
         {% for experience in site.data.reviewer_experiences %}
           <tr>
-            <th scope="row" style="width: 60px;">{{ experience.year }}</th>
-            <td>{{ experience.conference }}</td>
+            <td>
+              {{ experience.conference }}
+              {% if experience.years %}
+                <span class="font-weight-light">
+                  ({{ experience. years | join: ', ' }})
+                </span>
+              {% endif %}
+            </td>
           </tr>
         {% endfor %}
       </table>
