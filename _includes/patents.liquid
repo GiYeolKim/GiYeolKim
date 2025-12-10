@@ -1,0 +1,27 @@
+<div class="patents">
+  <h2>Patents</h2>
+  {% if site.data.patents %}
+    <div class="table-responsive">
+      <table class="table table-sm table-borderless">
+        {% for patent in site. data.patents %}
+          <tr>
+            <th scope="row" style="width: 60px; vertical-align: top;">
+              <strong>{{ patent.number }}</strong>
+            </th>
+            <td>
+              <div class="mb-1">
+                {{ patent.date }} ({{ patent.status }})
+              </div>
+              <div class="patent-title">
+                <strong>[KOR]</strong> {{ patent.title_kor }}
+              </div>
+              <div class="patent-title">
+                <strong>[ENG]</strong> {{ patent.title_eng }}
+              </div>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  {% endif %}
+</div>
