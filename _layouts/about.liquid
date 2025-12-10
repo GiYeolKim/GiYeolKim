@@ -77,6 +77,11 @@ layout: default
       {% endif %}
     </div>
 
+    {% if page.reviewer_experiences %}
+      {% include reviewer_experiences.liquid %}
+    {% endif %}
+
+
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
